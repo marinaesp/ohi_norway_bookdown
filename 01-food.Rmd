@@ -1,0 +1,33 @@
+# Food provision goal {#food}
+
+## Aquaculture sub-goal
+Aquacultue index measures sustainable production of farmed fish in northern Norway.
+The table below explains the structure of aquacuture goal: the components of the goal and the  data layers used to estimate them.
+
+Component of the goal|Data layers description|Temporal coverage|Data source|
+|--------------|-------------|---------------|-----------|
+|Production|Standing biomass of salmon and trout per municipality each month; amount of fish lost during the production|2005-2018|The Fisheries Directorate of Norway|
+|Fish lost during production|Amount of fish died, escaped or lost due to other reasons during production each year|2005-2018|The Fisheries Directorate of Norway|
+|Lice abundance|Average lice abundane at a farm, compared to thresholds abundance|2005-2018|Norwegian Marine Data Center, Barentswatch.no portal|
+|MOM B examinations|The category of environmental impact at a farm from very good (1) to bery bad (4)|2005-2018|The Fisheries Directorate of Norway|
+|Economic feed conversion ratio (eFCR) |Consumption of feed per municipality each year|2005-2015|The Fisheries Directorate of Norway|
+
+
+### Estimating sustainable aquacultlure
+Aquaculutre goal consists of two components: total production and sustainability indices. When both components are calculated, they are combined into the amout of aquacutllure production (in tonns og kg) produced sustainably.
+
+![Fig.1. Production and sustainability indicators of aquaculture sub-goal](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/production_chart.jpg)
+Below is the description of each component of the aquaculture sub-goal.
+
+
+**Annual production**
+
+**Lice prevalence**
+
+
+
+
+
+
+
+
