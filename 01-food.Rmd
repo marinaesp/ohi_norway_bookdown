@@ -19,12 +19,49 @@ Aquaculutre goal consists of two components: total production and sustainability
 ![Fig.1. Production and sustainability indicators of aquaculture sub-goal](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/production_chart.jpg)
 Below is the description of each component of the aquaculture sub-goal.
 
-
 **Annual production**
+We caclulated total annual aquaculture production per municipality, as follows:
+$Tot.prod = \triangle Biomass + Harvest - Discard - Seeded\ smolts$
+
+Biomass change and harvest  were corrected for slaugher weight, by multiplying their weight by 0.88.
+The weight of smolts was assumed to be 100 gramms, and the weight of discarded salmon - **5x0.88 = 4.4**  kg.
+
+Where, $\triangle Biomass$ is the difference of standing biomass of fish in December of the given year minus December of the previous year, $Harvest$ is biomass of fish harvested (kg); $Seeded\ smolts$ is the biomass of smolts (kg), seeded for production at the beginning of the production cycle; $Discard$ is the biomass of fish (kg) discarded at the slaughter plant, and Removed is the biomass of fish (kg) removed from the cages for slaughtering at another location or for other reasons 
+
+$\triangle Biomass$ is the difference between standing biomass of fish in Desember of a given year minus standing biomass in Desember of the previous year. When it was not possible to subtract standing biomass of the previous year, for instance, when there was no fish in the cages at the end of the previous year, we calculated the difference between earliest and latest month of the give year, when there were fish in the cages.
+
+For some municipalities, the total annual aquacultlure production was negative, due to underestimnation of fish biomass. In these cases, the total production was set to a missing value (NA). These missing values were replaced with a nearest observed produciton (either of the previous or of the following year). 
+Of the 81 coastal municipalities in Northern Norway, 10 did not have aquaculture in any of the studied years (1994 - 2018):
+
+* Andoy
+* Berlavag
+* Hemnes
+* Malselv
+* Prosanger
+* Rost
+* Tana
+* Vado
+* Vaeroy
+* Vardo
+
+For code on estimation of aquaculture produciton, please 
+[see here](https://ohi-norway.github.io/nor-prep/prep/food_provision/Mariculture/total_aquaculture_production_and_efcr_newdata_jan2020.html).
+
+
+**Economic feed conversion ratio (eFCR)**
+Economic feed conversion ratio (eFCR) is the ratio of the amount of feed used during the produciton of fish, to the final biomass of fish released to the market [@boyd2007indicators].
+
+$eFCR = \frac{Feed \ used,\ kg}{Biomass\ produced,\ kg}$
+
+We calculated eFCR as a ratio of total feed used for production in a county (Norwegian "fylke"), to the total biomass of fish produced annually in the county. The total feed consumption and total biomass produced per region were calculated as a sum of feed consumption and produced biomass of all municipalities within the county.
+
 
 **Lice prevalence**
 
 
+
+
+**Environmentlal monitoring - MOM B scores**
 
 
 
