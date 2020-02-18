@@ -1,0 +1,36 @@
+--- 
+title: "Ocean Health Index for northern Norway"
+author: "Marina Espinasse"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: ~/github/ohi_norway_bookdown
+description: ""
+---
+
+# About the project
+![](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/1553426042711.JPEG)
+
+The growth in the blue economy is changing coastal ecosystems and communities in northern Norway. To guide ecosystem-based management, decision-makers need measures of ocean health and an analyzis of how industrial development affects sustainability of the human-ocean interactions.  
+<span style="color:navy">**The Ocean Health Index for Northern Norway (Coastal barometer)**</span> proposes  a set of sustainability indicators that are measuring 
+the progress towards societal sustainability goals related to the coast, and evaluates the effect of coastal industries on these sustainability goals.
+
+The study area of the project covers 81 coastal municipalities in northern Norway:
+![](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/municipalities_map_labelled.jpg)
+
+
+
+To learn more about the project, please visit our [blogg](https://markdownmonster.west-wind.com/docs/_4xs10gaui.htm). 
+
+
+
+<!-- To spell-check all the docs: -->
+<!-- spelling::spell_check_files("path/to/rmd_files.Rmd") -->
+
+
+<!-- examples of citations -->
+<!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
