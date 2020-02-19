@@ -64,7 +64,7 @@ In this study, we used a lice indicator developed by the Norwegian Food Authorit
 
 Based on the lice monitoring by the Norwegian Food authority, we formulated indicator for our study in the following way. For the highest lice sustainability score over a year, each municipality should have lower than the threshold lice count throughout a  year. In other words, the target of lice sustainability index is to keep lice under control at any time during the production cycle. For each produdction site, we estimated the proportion of weeks in a year when lice abundance  is below a threshold and averaged this estimate for all locations within a single municipality. Thus, when all the aquaculture locations in a municipality in a given year were below lice threshold during all 53 weeks of a year, the municipality scored 1 for the lice indicator. Conversely, a small number of weeks when abundance of lice at production sites was below threshold resulted in a lower score.
 
-$Lice \ index = \sum_{i = 1}^{N \ of \ sites}(\frac{n \ weeks\ below_ \ threshold}{total\ weeks}$
+$Lice \ index = \sum_{i = 1}^{N \ of \ sites}[\frac{n \ weeks\ below_ \ threshold}{total\ weeks}]$
 
 Missing values in lice score data were replaced with an average of the score over the recent 5 years with data, when more than 7 years of data were available. If only 7 or fewer year with data were available, we used all given years to calculate the average score and replace missing values with this score. 
 For details on computation of the lice score, please follow this [link](https://ohi-norway.github.io/nor-prep/prep/food_provision/Mariculture/lice_count_at_localities.html). 
