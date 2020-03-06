@@ -80,7 +80,7 @@
 
 \title{Ocean Health Index for northern Norway}
 \author{Marina Espinasse}
-\date{2020-02-20}
+\date{2020-02-28}
 
 \begin{document}
 \maketitle
@@ -99,6 +99,7 @@ The growth in the blue economy is changing coastal ecosystems and communities in
 the progress towards societal sustainability goals related to the coast, and evaluates the effect of coastal industries on these sustainability goals.
 
 The study area of the project covers 81 coastal municipalities in northern Norway:
+
 \includegraphics{/Users/marinaespinasse/github/ohi_norway_bookdown/pics/municipalities_map_labelled.jpg}
 
 To learn more about the project, please visit our \href{https://markdownmonster.west-wind.com/docs/_4xs10gaui.htm}{blogg}.
@@ -109,10 +110,23 @@ To learn more about the project, please visit our \href{https://markdownmonster.
 \hypertarget{aquaculture-sub-goal}{%
 \section{Aquaculture sub-goal}\label{aquaculture-sub-goal}}
 
-Aquacultue index measures sustainable production of farmed fish in northern Norway.
-The table below explains the structure of aquacuture goal: the components of the goal and the data layers used to estimate them.
+Aquaculture index measures sustainable production of farmed fish in northern Norway.
+The table below explains the structure of aquaculture goal: the components of the goal and the data layers used to estimate them.
 
 \begin{longtable}[]{@{}llll@{}}
+\caption{\label{tab:simple-table} Data layers used for aquaculture sub-goal}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.23\columnwidth}\raggedright
+Component of the goal\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
+Data layers description\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+Temporal coverage\strut
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright
+Data source\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 \begin{minipage}[b]{0.23\columnwidth}\raggedright
 Component of the goal\strut
@@ -146,7 +160,7 @@ The Fisheries Directorate of Norway\strut
 \begin{minipage}[t]{0.23\columnwidth}\raggedright
 Lice abundance\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Average lice abundane at a farm, compared to thresholds abundance\strut
+Average lice abundance at a farm, compared to thresholds abundance\strut
 \end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
 2005-2018\strut
 \end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
@@ -176,21 +190,22 @@ The Fisheries Directorate of Norway\strut
 \hypertarget{estimating-sustainable-aquacultlure}{%
 \subsection{Estimating sustainable aquacultlure}\label{estimating-sustainable-aquacultlure}}
 
-Aquaculutre goal consists of two components: total production and sustainability indices. When both components are calculated, they are combined into the amout of aquacutllure production (in tonns og kg) produced sustainably.
+Aquaculture goal consists of two components: total production and sustainability indices. When both components are calculated, they are combined into the amount of aquaculture production (in tonns og kg) produced sustainably.
 
 \includegraphics{/Users/marinaespinasse/github/ohi_norway_bookdown/pics/production_chart.jpg}
+
 Below is the description of each component of the aquaculture sub-goal.
 
 \textbf{Annual production}
-We caclulated total annual aquaculture production per municipality, as follows:
+We calculated total annual aquaculture production per municipality, as follows:
 \(Tot.prod = \triangle Biomass + Harvest - Discard - Seeded\ smolts\)
 
-Biomass change and harvest were corrected for slaugher weight, by multiplying their weight by 0.88.
-The weight of smolts was assumed to be 100 gramms, and the weight of discarded salmon - \textbf{5x0.88 = 4.4} kg.
+Biomass change and harvest were corrected for slaughter weight, by multiplying their weight by 0.88.
+The weight of smolts was assumed to be 100 grams, and the weight of discarded salmon - \textbf{5x0.88 = 4.4} kg.
 
 Where, \(\triangle Biomass\) is the difference of standing biomass of fish in December of the given year minus December of the previous year, \(Harvest\) is biomass of fish harvested (kg); \(Seeded\ smolts\) is the biomass of smolts (kg), seeded for production at the beginning of the production cycle; \(Discard\) is the biomass of fish (kg) discarded at the slaughter plant, and Removed is the biomass of fish (kg) removed from the cages for slaughtering at another location or for other reasons
 
-\(\triangle Biomass\) is the difference between standing biomass of fish in Desember of a given year minus standing biomass in Desember of the previous year. When it was not possible to subtract standing biomass of the previous year, for instance, when there was no fish in the cages at the end of the previous year, we calculated the difference between earliest and latest month of the give year, when there were fish in the cages.
+\(\triangle Biomass\) is the difference between standing biomass of fish in December of a given year minus standing biomass in December of the previous year. When it was not possible to subtract standing biomass of the previous year, for instance, when there was no fish in the cages at the end of the previous year, we calculated the difference between earliest and latest month of the give year, when there were fish in the cages.
 
 For some municipalities, the total annual aquacultlure production was negative, due to underestimnation of fish biomass. In these cases, the total production was set to a missing value (NA). These missing values were replaced with a nearest observed produciton (either of the previous or of the following year).
 Of the 81 coastal municipalities in Northern Norway, 10 did not have aquaculture in any of the studied years (1994 - 2018):
@@ -229,6 +244,8 @@ Economic feed conversion ratio (eFCR) is the ratio of the amount of feed used du
 
 We calculated eFCR as a ratio of total feed used for production in a county (Norwegian ``fylke''), to the total biomass of fish produced annually in the county. The total feed consumption and total biomass produced per region were calculated as a sum of feed consumption and produced biomass of all municipalities within the county.
 
+To calulate eFCR-based sustainability indicator, we compared eFCR between the northern Norwegian counites for each year. The municipalities, located in the county with the lowest eFCR got the highest score, and the other counties, and municipalities located in them, eFCR score was calculated as 1 minus percentage of difference between the given county's eFCR and the minimal observed eFCR that year.
+
 \textbf{Lice prevalence}
 
 High lice prevalence at the aquaculture production site can cause a decrease in production rate and can also cause a higher lice infection pressure on wild salmonids \citep{bjorn2001salmon, nilsen2017vurdering}.
@@ -255,13 +272,13 @@ In this study, we used the scores of MOM B investigations to formulate the envir
 
 The resultant index can be interpreted as follows. For a highest score, all the production sites within a municipality should score 1 or 2 at MOM B investigations. Also, the lower the biomass and number of the sites that score 3 and 3 at MOM B, the higher the score.
 
-\hypertarget{literature}{%
-\chapter{Literature}\label{literature}}
+\hypertarget{carbon-storage}{%
+\chapter{Carbon storage}\label{carbon-storage}}
 
 Here is a review of existing methods.
 
-\hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
+\hypertarget{clean-waters}{%
+\chapter{Clean waters}\label{clean-waters}}
 
 We describe our methods in this chapter.
 
