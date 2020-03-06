@@ -2,16 +2,20 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      colapse: none
+      scroll_highlight: yes
       before: |
         <li><a href="./">OHI Norway</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target=</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
-    download: ["pdf", "html"]
+    edit: https://github.com/marinaesp/ohi_norway_bookdown/blob/master/%s
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::epub_book: default
+
+
+
+
