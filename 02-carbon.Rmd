@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# Literature
-=======
+
 # Carbon storage
->>>>>>> 04a09f65687f4fdf689d5b6277a17a2ad0b35a7c
 
 Here is a review of existing methods.

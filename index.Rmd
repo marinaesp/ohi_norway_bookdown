@@ -20,14 +20,7 @@ The growth in the blue economy is changing coastal ecosystems and communities in
 the progress towards societal sustainability goals related to the coast, and evaluates the effect of coastal industries on these sustainability goals.
 
 The study area of the project covers 81 coastal municipalities in northern Norway:
-<<<<<<< HEAD
 ![](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/municipalities_map_labelled.jpg)
-
-=======
-</center>
-![](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/municipalities_map_labelled.jpg)
-</center>
->>>>>>> 04a09f65687f4fdf689d5b6277a17a2ad0b35a7c
 
 
 To learn more about the project, please visit our [blogg](https://markdownmonster.west-wind.com/docs/_4xs10gaui.htm). 

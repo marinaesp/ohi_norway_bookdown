@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-book_filename: "bookdown-demo"
-=======
 book_filename: "ohi-norway"
->>>>>>> 04a09f65687f4fdf689d5b6277a17a2ad0b35a7c
+output_dir: "docs"
 language:
   ui:
     chapter_name: "Chapter "
