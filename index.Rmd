@@ -11,17 +11,17 @@ link-citations: yes
 github-repo: ~/github/ohi_norway_bookdown
 description: ""
 ---
-
 # About the project
 ![](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/1553426042711.JPEG)
 
-The growth in the blue economy is changing coastal ecosystems and communities in northern Norway. To guide ecosystem-based management, decision-makers need measures of ocean health and an analyzis of how industrial development affects sustainability of the human-ocean interactions.  
+The growth in the blue economy is changing coastal ecosystems and communities in northern Norway. To guide ecosystem-based management, decision-makers need measures of ocean health and an analysis of how industrial development affects sustainability of the human-ocean interactions.  
 <span style="color:navy">**The Ocean Health Index for Northern Norway (Coastal barometer)**</span> proposes  a set of sustainability indicators that are measuring 
 the progress towards societal sustainability goals related to the coast, and evaluates the effect of coastal industries on these sustainability goals.
 
 The study area of the project covers 81 coastal municipalities in northern Norway:
+</center>
 ![](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/municipalities_map_labelled.jpg)
-
+</center>
 
 To learn more about the project, please visit our [blogg](https://markdownmonster.west-wind.com/docs/_4xs10gaui.htm). 
 

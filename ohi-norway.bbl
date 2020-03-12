@@ -20,6 +20,29 @@ Ervik, A., Hansen, P.~K., Aure, J., Stigebrandt, A., Johannessen, P., and
   farms-monitoring).
 \newblock {\em Aquaculture}, 158(1-2):85--94.
 
+\bibitem[Gullestad et~al., 2017]{gullestad2017towards}
+Gullestad, P., Abotnes, A.~M., Bakke, G., Skern-Mauritzen, M., Nedreaas, K.,
+  and S{\o}vik, G. (2017).
+\newblock Towards ecosystem-based fisheries management in norway--practical
+  tools for keeping track of relevant issues and prioritising management
+  efforts.
+\newblock {\em Marine Policy}, 77:104--110.
+
+\bibitem[Halpern et~al., 2014]{halpern2014assessing}
+Halpern, B.~S., Longo, C., Scarborough, C., Hardy, D., Best, B.~D., Doney,
+  S.~C., Katona, S.~K., McLeod, K.~L., Rosenberg, A.~A., and Samhouri, J.~F.
+  (2014).
+\newblock Assessing the health of the us west coast with a regional-scale
+  application of the ocean health index.
+\newblock {\em Plos one}, 9(6).
+
+\bibitem[Kleisner et~al., 2013]{kleisner2013exploring}
+Kleisner, K.~M., Longo, C., Coll, M., Halpern, B.~S., Hardy, D., Katona, S.~K.,
+  Le~Manach, F., Pauly, D., Rosenberg, A.~A., Samhouri, J.~F., et~al. (2013).
+\newblock Exploring patterns of seafood provision revealed in the global ocean
+  health index.
+\newblock {\em Ambio}, 42(8):910--922.
+
 \bibitem[Nilsen et~al., 2017]{nilsen2017vurdering}
 Nilsen, F., Ellingsen, I.~H., Finstad, B., and Jansen, P.~A. (2017).
 \newblock Vurdering av lakselusindusert villfiskd{\o}delighet per
@@ -31,5 +54,10 @@ Norge, S. (2016).
 \newblock Milj{\o}overv{\aa}king av bunnp{\aa}virkning fra marine
   akvakulturanlegg.
 \newblock {\em Norsk Standard}, 9410:2016.
+
+\bibitem[Zeileis and Grothendieck, 2005]{zeileis2005zoo}
+Zeileis, A. and Grothendieck, G. (2005).
+\newblock zoo: S3 infrastructure for regular and irregular time series.
+\newblock {\em arXiv preprint math/0505527}.
 
 \end{thebibliography}

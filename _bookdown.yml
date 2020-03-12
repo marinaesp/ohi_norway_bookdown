@@ -1,6 +1,10 @@
 book_filename: "ohi-norway"
 output_dir: "docs"
-language:
-  ui:
-    chapter_name: "Chapter "
 delete_merged_file: true
+tables: yes
+rmd_files: ["index.Rmd",
+            "01-food.Rmd",
+             "02-carbon.Rmd",
+             "03-cleanwater.Rmd",
+             "04-references.Rmd"]
+

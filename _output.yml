@@ -1,23 +1,26 @@
 bookdown::gitbook:
-  css: style.css
+  toc_depth: 3
+  css: [style_mca.css, toc_mca.css]
   config:
     toc:
-      colapse: none
-      scroll_highlight: yes
-      before: |
-        <li><a href="./">OHI Norway</a></li>
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target=</a></li>
-    edit: https://github.com/marinaesp/ohi_norway_bookdown/blob/master/%s
+       before: |
+        <li><center><img src="pics/logo_ocean.png" alt="logo" width="50%" height="50%"style="margin: 15px 0 0 0"></center></li>
+       after: null
+    split_by: none
+    edit: null
+    download: null
+    sharing:
+      github: yes
+      linkedin: yes
+      twitter: yes
+    search: yes
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::html_book:
-  css: toc.css
-documentclass: book
+
 
 
 

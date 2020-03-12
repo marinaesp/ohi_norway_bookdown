@@ -1,9 +1,3 @@
----
-output:
-  word_document: default
-  html_document: default
-  pdf_document: default
----
 # Food provision goal {#food}
 
 ## Aquaculture sub-goal
@@ -32,6 +26,7 @@ knitr::include_graphics("/Users/marinaespinasse/github/ohi_norway_bookdown/pics/
 Below is the description of each component of the aquaculture sub-goal.
 
 **Annual production**
+
 We calculated total annual aquaculture production per municipality, as follows:
 \begin{equation}
 Tot.prod = \triangle Biomass + Harvest - Discard - Seeded\ smolts
@@ -96,7 +91,7 @@ Based on the lice monitoring by the Norwegian Food authority, we formulated indi
 
 
 \begin{equation}
-Lice \ index = \sum_{i = 1}^{N \ of \ sites}[\frac{n \ weeks\ below_ \ threshold}{total\ weeks}]
+Lice \ index = \sum_{i = 1}^{N \ of \ sites}[\frac{n \ weeks\ below \ threshold}{total\ weeks}]
  (\#eq:lice)
 \end{equation}
 
@@ -210,7 +205,7 @@ To define the final Food Production goal per municipality and year, we combined 
 
 \begin{equation}
 W_{FP\ i, k} = \frac{P_{F\ i,k}}{(P_{F\ i,k} + P_{A\ i,k})}
-(\#eq:foodprodw) 
+(\#eq:foodprod) 
 \end{equation}
 
 $$~$$
@@ -227,23 +222,24 @@ $$~$$
 $$~$$
 
 Where $W_{FP}$  is the weight of annual fisheries production per municipality, $P_{F\ i,k}$  is the production yield (tons) of fisheries in a single municipality per year, and $P_{A\ i,k}$ is the production yield of aquaculture in a single municipality per year. 
-In some years, a municipality could have only aquaculture production, but no catch was registered (e.g., Vevelstad in Nordland  2006-2010, Fig ##), or conversely, a municipality did not produce farmed fish, but had catches delivered (e.g., Anody in Nordland, Fig ##). In these cases, the Food Production goal was estimated based only on aquaculture- or fisheries yield, respectively. 
+In some years, a municipality could have only aquaculture production, but no catch was registered (e.g., Vevelstad in Nordland  2006-2010, \@ref(fig:fishakva1)), or conversely, a municipality did not produce farmed fish, but had catches delivered (e.g., Anody in Nordland,\@ref(fishakva1)). In these cases, the Food Production goal was estimated based only on aquaculture- or fisheries yield, respectively. 
 
 ## Contribution of fisheries and aquaculture to the total seafood production yield: graphics
+
 Below are the graphs of proportional contribution of aquaculture and fisheries total landings to ocean-based food production in northern Norway. The data is presented for each municipality of the three counties: Nordland, Troms, and Finnmark.
 
 <span style="color:navy">**Nordland**</span>
-```{r echo = FALSE, fishakva2, fig.cap='Proportion of fisheries and aquacuture production in Nordland', out.width='100%', fig.align='center'}
+```{r fishakva1, echo = FALSE, fig.cap='Proportion of fisheries and aquacuture production in Nordland', out.width='100%', fig.align='center'}
 knitr::include_graphics("/Users/marinaespinasse/github/ohi_norway_bookdown/pics/compare_fish_aqua_nordland.jpg", dpi = 700)
 ```
 
 <span style="color:navy">**Troms**</span>
-```{r echo = FALSE, fishakva3, fig.cap='Proportion of fisheries and aquacuture production in Troms', out.width='100%', fig.align='center'}
+```{r fishakva2, echo = FALSE, fig.cap='Proportion of fisheries and aquacuture production in Troms', out.width='100%', fig.align='center'}
 knitr::include_graphics("/Users/marinaespinasse/github/ohi_norway_bookdown/pics/compare_fish_aqua_troms.jpg", dpi = 700)
 ```
 
 <span style="color:navy">**Finnmark**</span>
-```{r echo = FALSE, fishaakva1, fig.cap='Proportion of fisheries and aquacuture production in Finnmark', out.width='100%', fig.align='center'}
+```{r fishaakva3, echo = FALSE, fig.cap='Proportion of fisheries and aquacuture production in Finnmark', out.width='100%', fig.align='center'}
 knitr::include_graphics("/Users/marinaespinasse/github/ohi_norway_bookdown/pics/compare_fish_aqua_finnmark.jpg", dpi = 700)
 ```
 
