@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="2.2 Fisheries sub-goal | Ocean Health Index for northern Norway" />
+<meta property="og:type" content="book" />
+
+
+
+<meta name="github-repo" content="~/github/ohi_norway_bookdown" />
+
+<meta name="author" content="Marina Espinasse" />
+
+<meta name="date" content="2020-03-12" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+
+<meta name="description" content="2.2 Fisheries sub-goal | Ocean Health Index for northern Norway">
+
+<title>2.2 Fisheries sub-goal | Ocean Health Index for northern Norway</title>
+
+<script src="libs/header-attrs-2.0.5/header-attrs.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#about-the-project"><span class="toc-section-number">1</span> About the project</a></li>
+<li><a href="food.html#food"><span class="toc-section-number">2</span> Food provision goal</a>
+<ul>
+<li><a href="aquaculture-sub-goal.html#aquaculture-sub-goal"><span class="toc-section-number">2.1</span> Aquaculture sub-goal</a>
+<ul>
+<li><a href="aquaculture-sub-goal.html#estimating-sustainable-aquacultlure"><span class="toc-section-number">2.1.1</span> Estimating sustainable aquacultlure</a></li>
+</ul></li>
+<li><a href="fisheries-sub-goal.html#fisheries-sub-goal"><span class="toc-section-number">2.2</span> Fisheries sub-goal</a></li>
+<li><a href="combining-the-two-sub-goals.html#combining-the-two-sub-goals"><span class="toc-section-number">2.3</span> Combining the two sub-goals</a></li>
+<li><a href="contribution-of-fisheries-and-aquaculture-to-the-total-seafood-production-yield-graphics.html#contribution-of-fisheries-and-aquaculture-to-the-total-seafood-production-yield-graphics"><span class="toc-section-number">2.4</span> Contribution of fisheries and aquaculture to the total seafood production yield: graphics</a></li>
+</ul></li>
+<li><a href="carbon.html#carbon"><span class="toc-section-number">3</span> Carbon storage</a></li>
+<li><a href="cleanwater.html#cleanwater"><span class="toc-section-number">4</span> Clean waters</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="fisheries-sub-goal" class="section level2" number="2.2">
+<h2 number="2.2"><span class="header-section-number">2.2</span> Fisheries sub-goal</h2>
+</center>
+<img src="pics/lofoten2.jpeg" />
+</center>
+<p>In the fisheries sub-goal, we utilized the annual catch statistics of the 6 economically important species of the Barents and Norwegian sea fisheries: North-East Arctic cod, capelin, haddock, Atlantic herring, saithe, Atlantic mackerel, and 2 crustacean species (deep water shrimp and kingcrab).
+The landings data for the 6 stocks for 1994-2017 were obtained from the Fisheries Directorate of Norway, under agreement, and the data for 2018 was downloaded from the online database of the <a href="https://www.fiskeridir.no/Tall-og-analyse/AApne-data/AApne-datasett/Fangstdata-seddel-koblet-med-fartoeydata">Fisheries Directorate of Norway</a>.
+For the calculation of the sustainability of fisheries, we used an MSY-based approach <span class="citation">(Gullestad et al. <a href="#ref-gullestad2017towards" role="doc-biblioref">2017</a>)</span>. The sustainability scores were defined based on the reference points of sustainable fisheries management (ICES), namely, the spawning stock biomass (<em>SSB</em>), the biomass at the maximum sustainable yield (<em>Bmsy</em>), the biomass level that triggers a management action (<em>MSYBtrigger</em>), instantaneous fishing mortality rate (<em>F</em>), the mortality at the maximum sustainable yield (<em>Fmsy</em>), and the limit reference point for fishing mortality (<em>Flim</em>). The fisheries reference points, <em>F</em> and <em>SSB</em>, are reflect whether fisheries exploits healthy stocks and whether it maintains the stability of stocks in future by limiting the fishing pressure on the stocks <span class="citation">(Kleisner et al. <a href="#ref-kleisner2013exploring" role="doc-biblioref">2013</a>)</span>.</p>
+<p>We estimated the B-score – sustainability score based on the <em>SSB</em> <em>MSYBtrigger</em> of each stock and as follows.</p>
+<p><span class="math display" id="eq:fscore2">\[\begin{equation}
+  B_{score} =
+    \begin{cases}
+      1 &amp; \text{if $SSB \ge MSYBtrigger$}\\
+    \\
+      0 &amp; \text{if $SSB \le Blim$}\\
+    \\
+      1 - \frac{MSYBtrigger - SSB}{MSYBtrigger - Blim} &amp; \text{ if $Blim &lt; SSB &lt; MSYBtrigger$}
+\tag{5}      
+    \end{cases}   
+\end{equation}\]</span></p>
+<p>The idea of the B-score is that a healthy stock, for which <em>SSB</em> is larger than <em>MSYBtrigger</em> scores highest. A stock for which <em>SSB</em> is below <em>Blim</em>, scores zero and is considered unhealthy, while the <em>SSB/ MSYBtrigger</em> ratios between zero and one, are scaled by the difference between <em>MSYBtrigger</em> and <em>Blim</em> as shown in the formula above. Importantly, unlike in the Ocean Health Index for the West Coast of USA <span class="citation">(Halpern et al. <a href="#ref-halpern2014assessing" role="doc-biblioref">2014</a>)</span>, we did not penalize study regions for underexploiting the stocks. Therefore, in our approach a highest score corresponded to ratio of <em>SSB/MSYBtrigger</em> of 1 or lager.
+The calculation of <em>F-score</em> is similar, and the highest <em>F-score</em> implies that mortality rate is below <em>Fmsy</em>, while mortality above <em>Flim</em> returns the lowest score. Finally, when <em>F</em> is below <em>Flim</em> but still larger than <em>Fmsy</em>, the F-score is scaled by <em>Fmsy</em> and <em>Flim</em> differences, as explained in formulas below.</p>
+<p><span class="math display" id="eq:fscore">\[\begin{equation}
+  F_{score} =
+    \begin{cases}
+      1 &amp; \text{if $F \le Fmsy$}\\
+    \\  
+      0 &amp; \text{if $F \ge Flim $}\\
+      \\
+      1 - \frac{Fmsy - F}{Fmsy - Flim} &amp; \text{if $Fmsy &lt; F &lt; Flim $}
+ \tag{6}       
+    \end{cases}  
+\end{equation}\]</span></p>
+<p>The final stock sustainability scores were calculated as the mean of the <em>B-score</em> and <em>F-score</em>.</p>
+<p><span class="math display" id="eq:sscore">\[\begin{equation}
+Stock.score_{j,k} = \frac{F_{score\ j,k} +B_{score\ j,k}}{2}
+ \tag{7} 
+\end{equation}\]</span></p>
+<p>Where <em>j</em> is stock and <em>k</em> is year.
+For some species (capelin, saithe) <em>Flim</em> and <em>Fmsy</em> values were not available. In these cases, the stock scores were based only on the <em>B-scores</em>. In addition, for saithe, no <em>MSYBtrigger</em> was available and instead, we used a <em>SSB management trigger</em> (220000) reported in ICES advice for saithe in 2019 <a href="http://ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/pok.27.1-2.pdf">ICES 2019 Advice</a>. Similarly, for capelin, <em>MSYBtrigger</em> was not available, and we replaced it with the lowest observed <em>SSB</em> since 1994 (94000).</p>
+<p>In addition to stock sustainability scores, we calculated the annual catch of each species in each municipality and divided it by municipality’s sea area (in <span class="math inline">\(km^2\)</span>) to smooth the differences in total catch between the municipalities. There were also considerable interannual differences in total catches, and to smooth them we applied a 3-year rolling mean to catches of each stock using package zoo in R <span class="citation">(Zeileis and Grothendieck <a href="#ref-zeileis2005zoo" role="doc-biblioref">2005</a>)</span>. Then, we compared catch in each municipality per year with the maximal observed catch per area of the same stock in the whole study region. However, catches between municipalities differed by several powers of magnitude (from less than 10 tons to about 10000 tons), therefore we used a 75th percentile of the total catch distribution per species as a reference maximal catch, and the municipalities that caught more than 75th quantile of the maximal catch, were assigned proportion 1.
+The catch weighted score was calculated as the product of proportion of catch per area to maximal catch per area and stock score of each species.</p>
+<p><span class="math display" id="eq:catchweight">\[\begin{equation}
+Catch\ weighted \ score_{i,j, k} = \frac{Catch\ per\ area_{i,j,k}}{Catch\ per\ area_{max,j,k}}*Stock\ score_{j,k}
+\tag{8} 
+\end{equation}\]</span></p>
+<p>Where <em>i</em>, <em>j</em>, and <em>k</em> are single municipality, stock, and year, respectively.
+Finally, the fisheries goal score per municipality and year was calculated as the sum over all stocks of the product of catch weighted score and the proportion that each stock constituted of the total catch in a municipality.</p>
+<p><span class="math display" id="eq:fishscore">\[\begin{equation}
+\begin{aligned}
+ Fisheries\ score_{i,k} = \\
+ &amp; \sum_{j = 1}^{N stocks}Catch\ weighted\ score_{i,j,k}\\
+ &amp; * Catch\ proportion_{i,j,k}* 100
+ \end{aligned}
+  \tag{9} 
+\end{equation}\]</span></p>
+</div>
+<h1 class="unnumbered" number="">References</h3>
+<div id="refs" class="references">
+<div id="ref-gullestad2017towards">
+<p>Gullestad, Peter, Anne Marie Abotnes, Gunnstein Bakke, Mette Skern-Mauritzen, Kjell Nedreaas, and Guldborg Søvik. 2017. “Towards Ecosystem-Based Fisheries Management in Norway–Practical Tools for Keeping Track of Relevant Issues and Prioritising Management Efforts.” <em>Marine Policy</em> 77: 104–10.</p>
+</div>
+<div id="ref-halpern2014assessing">
+<p>Halpern, Benjamin S, Catherine Longo, Courtney Scarborough, Darren Hardy, Benjamin D Best, Scott C Doney, Steven K Katona, Karen L McLeod, Andrew A Rosenberg, and Jameal F Samhouri. 2014. “Assessing the Health of the Us West Coast with a Regional-Scale Application of the Ocean Health Index.” <em>Plos One</em> 9 (6).</p>
+</div>
+<div id="ref-kleisner2013exploring">
+<p>Kleisner, Kristin M, Catherine Longo, Marta Coll, Ben S Halpern, Darren Hardy, Steven K Katona, Frédéric Le Manach, et al. 2013. “Exploring Patterns of Seafood Provision Revealed in the Global Ocean Health Index.” <em>Ambio</em> 42 (8): 910–22.</p>
+</div>
+<div id="ref-zeileis2005zoo">
+<p>Zeileis, Achim, and Gabor Grothendieck. 2005. “Zoo: S3 Infrastructure for Regular and Irregular Time Series.” <em>arXiv Preprint Math/0505527</em>.</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="aquaculture-sub-goal.html"><button class="btn btn-default">Previous</button></a>
+<a href="combining-the-two-sub-goals.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
