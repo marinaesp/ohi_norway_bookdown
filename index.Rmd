@@ -11,7 +11,8 @@ link-citations: yes
 github-repo: ~/github/ohi_norway_bookdown
 description: ""
 ---
-# About the project
+
+# About the project {-}
 ![](/Users/marinaespinasse/github/ohi_norway_bookdown/pics/1553426042711.JPEG)
 
 The growth in the blue economy is changing coastal ecosystems and communities in northern Norway. To guide ecosystem-based management, decision-makers need measures of ocean health and an analysis of how industrial development affects sustainability of the human-ocean interactions.  
@@ -25,11 +26,17 @@ The study area of the project covers 81 coastal municipalities in northern Norwa
 
 To learn more about the project, please visit our [blogg](https://markdownmonster.west-wind.com/docs/_4xs10gaui.htm). 
 
+## Project participants {-}
 
-
-<!-- To spell-check all the docs: -->
-<!-- spelling::spell_check_files("path/to/rmd_files.Rmd") -->
-
-
-<!-- examples of citations -->
-<!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
+* [Per Fauchald, NINA Norway](https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=18021)
+* [Sigrid Engen, NINA Norway](https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=14971)
+* [Vera Hausner, UiT Norway](https://en.uit.no/ansatte/person?p_document_id=41154)
+* [Marina Espinasse, IMR Norway](https://github.com/marinaesp)
+* [Eirik Mikkelsen, Nofima](https://nofima.no/en/employee/eirik-mikkelsen/)
+* [Erik Olsen, IMR Norway](https://www.hi.no/hi/om-oss/ansatte/erik-olsen)
+* [Anna Siwertsson, IMR Norway](https://www.hi.no/hi/om-oss/ansatte/anna-siwertsson)
+* [Hege Gundersen, NIVA Norway](https://www.niva.no/Ansatte/hege-gundersen)
+* [Hartvig Christie, NIVA Norway](https://scholar.google.no/citations?user=WlAVdFEAAAAJ&hl=en)
+* [Jannike Falk-Andersson, SALT Norway](https://salt.nu/en/about-salt/salt-sailors/#Jannike_Falk-Andersson)
+* [Jamie Montgomery, NCEAS CA](https://www.jamiecmontgomery.com)
+* [Ben Halpern, NCEAS CA](https://www.nceas.ucsb.edu/ben-halpern-director-nceas)
