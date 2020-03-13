@@ -26,7 +26,7 @@ The study area of the project covers 81 coastal municipalities in northern Norwa
 
 To learn more about the project, please visit our [blogg](https://markdownmonster.west-wind.com/docs/_4xs10gaui.htm). 
 
-# Project participants {-}
+**Project participants**
 
 * [Per Fauchald, NINA Norway](https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=18021)
 * [Sigrid Engen, NINA Norway](https://www.nina.no/Kontakt/Ansatte/Ansattinformasjon.aspx?AnsattID=14971)
