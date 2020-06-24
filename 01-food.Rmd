@@ -117,7 +117,7 @@ MOMB \ index  = 1 - (\frac{MTB_{farms \ scored \ 3 \ and \ 4}}{MTB_{municipality
 (\#eq:momb)
 \end{equation} 
  
-The resultant index can be interpreted as follows. For a highest score, all the production sites within a municipality should score 1 or 2 at MOM B investigations. Also, the lower the biomass and number of the sites that score 3 and 3 at MOM B, the higher the score.
+The resultant index can be interpreted as follows. For a highest score, all the production sites within a municipality should score 1 or 2 at MOM B investigations. Also, the lower the biomass and number of the sites that score 3 and 4 at MOM B, the higher the score.
 
 
 
