@@ -1,3 +1,53 @@
 # Clean waters {#cleanwater}
 
-We describe our methods in this chapter.
+Clean waters goal measures to what extent coastal waters are unpolluted. This goal can include any kind of pollution that may occur in the coastal areas:  pollution by organic and inorganic compunds, eutrophication, and pollution with marine debris. However, when data coverage is narrow, one or several types of pollution may be exluded from the clean waters asessment. 
+
+Below, we describe the components of the clean waters goal included in the OHI Norway.
+
+
+
+## Status of the coastal water entities
+The coast of Norway is divided into water regions, usually corresponding to larger administrative areas of Norway (such as counties Nordland, Troms and Finnmark), drainage areas (an area from which surface waters are drained to a specific coastal area), and single water entities.  A single coastal water entity is a relatively morphologically delimited coastal area such as a small fjord or an arm of a larger fjord.  
+  
+Following [European Water Framework Directive](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060), Norway has implemented an assessment scheme of water entities. The assessment of waters’ status in Norway is conducted by the national [Environmental agency](https://www.miljodirektoratet.no) in collaboration with other national institutions and organizations. In this assessment, each water entity is classified according to its ecological and chemical status. 
+
+Ecological status can be categorized as very good, good, moderate, bad, and very bad while chemical status has only two categories – good and bad ([Characterization of environmental status of waters, 2018](<http://www.vannportalen.no/globalassets/nasjonalt/dokumenter/tema-a-a/klassifisering/klassifiseringssystemet-veileder/klassifiseringsveileder_print_02.2018.pdf>)). Ecological status assessment includes the measurement of the following parameters: the degree of eutrophication, abundance and diversity of phytoplankton and macrofauna, the presence and abundance of invasive species, diversity and composition of bottom fauna.
+
+Chemical status assessment is based on the concentration of different pollution compounds (PCB, DDT, heavy metals and many other). The list of compounds prioritized for assessment can vary from one water entity to another due to locally specific sources of pollution. Both ecological and chemical parameters are compared with Ecological quality quotient (EQR), which is a set of reference values for each parameter, corresponding to an undisturbed state of the ecosystem. 
+
+Alongside with status of water entities, the assessmnet of water entities includes information on the underlaying data quality. For instance, assessment based on the sufficient amount of field data would have a “high reliability”, while in the absence of data, where the assessment is based only on modelling or interpolation from other assessment, the reliability of assessment would be categorized as “moderate” or “poor”.
+
+The assessment of the status is different for strongly modified water entities, such as heavily used harbors, or parts of the fjords used for deposition of mining tailings ([Strongly modified water entities, 2014](<http://www.vannportalen.no/globalassets/nasjonalt/dokumenter/veiledere-direktoratsgruppa/01_2014_smvf-veileder.pdf.>)). Because these entities are unlikely to reach god ecological status as long as they are used by coastal industries or other human activities, they are categorized into entities with god, moderate, or bad ecological potential. A good ecological potential implies that the water entity can revert back to a fully functional ecosystem when a set of recovery measures is applied.	
+
+For the estimation of the clean waters goal, we used the data on status of natural and modified water entities, as provided on [Vann-nett portal of Norway](www.vann-nett.no). The re-assessment of the status of water entities is done about every 6-10 years and only latest assessment results are available, thus we included only the data of the latest assessments.
+
+Table: (\#tab:layerscleanwat) Data layers used for clean waters goal
+
+Component of the goal|Data layers description|Temporal coverage|Data source|
+|--------------|-------------|---------------|-----------|
+|Assessment of ecological and chemical status of coastal water entities| The qualitative category (e.g., good/bad) of ecological and chemical status |Single assessment |Vann-nett portal|
+|Assessment of ecological potential of strognly modified coastal water entities | The qualitative category (e.g., good/bad) of ecological potential  | Single assessment |Vann-nett portal|
+
+## Calculation of the clean waters index
+The qualitative scores of ecological and chemical statuses for natural water entities were translated into quantitative scores as follows: very bad and bad status were both scored 0, because both statuses were considered as unsustainable; moderate status were given score 50, good – 75, and very good – 100. For the chemical status, we allocated score 0 for bad status and 100 for good. 
+For the strongly modified water entities, we assumed that they cannot score 100 even if ecological potential is god, because we assume that modified waters do not correspond to sustainable clean waters. Thus, we allocated score 50 for modified entities with a god ecological potential, 25 – for entities with a moderate potential, and 0 – for those with a bad potential.  
+ Next, we estimated average score for each water entity as follows.  We calculated the mean of ecological and chemical score for natural water entities, while modified water entities’ scores were not changed. Then, we estimated the area of intersection of each water entity with all the municipalities it extends over.  To calculate the final clean water index per municipality, we used a weighted average approach:
+
+
+\begin{equation}
+Clean \ waters \ index  = \sum_{i=1}^{n}w_i*score \ water \ entity_i 
+(\#eq:cleatwat)
+\end{equation} 
+
+\
+
+\begin{equation}
+w_i = \frac{Water \ area\ of intersection_i}{Water\ area \ of \ a \ municipality}
+(\#eq:cleatwatweight)
+\end{equation}
+
+
+## Handling missing data in clean waters scores
+Some of the natural water entities did not have chemical status assessed, in that case, the clean waters score for this entity was based only on the ecological status score. In some cases, (69 out of 1230) neither ecological no chemical score for natural entities was available, or a strongly modified entity did not have ecological potential assessed during the latest assessment. For these instances, we used gapfilling of missing data techniques. We grouped the water entities by drainage areas, and if drainage area included several water entities with non-missing scores, we used the mean of the available cases to gapfill the missing scores. 
+	However, there were 5 occasions where drainage area included only a single water entity, and the status score was missing for this entity. To replace such missing values, we used a clean water score of the closest neighboring water entity from the southern side. 
+
