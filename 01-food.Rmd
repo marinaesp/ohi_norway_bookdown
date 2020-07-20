@@ -29,7 +29,7 @@ Below is the description of each component of the aquaculture sub-goal.
 
 We calculated total annual aquaculture production per municipality, as follows:
 \begin{equation}
-Tot.prod = \triangle Biomass + Harvest - Discard - Seeded\ smolts
+Tot.prod = \triangle Biomass + Harvest + Moved\ fish - Discard - Seeded\ smolts - Added\ fish
 (\#eq:totprod) 
 \end{equation}
 
@@ -41,7 +41,7 @@ Where, $\triangle Biomass$ is the difference of standing biomass of fish in Dece
 $\triangle Biomass$ is the difference between standing biomass of fish in December of a given year minus standing biomass in December of the previous year. When it was not possible to subtract standing biomass of the previous year, for instance, when there was no fish in the cages at the end of the previous year, we calculated the difference between earliest and latest month of the give year, when there were fish in the cages.
 
 For some municipalities, the total annual aquaculture production was negative, due to underestimation of fish biomass. In these cases, the total production was set to a missing value (NA). These missing values were replaced with a nearest observed production (either of the previous or of the following year). 
-Of the 81 coastal municipalities in Northern Norway, 10 did not have aquaculture in any of the studied years (1994 - 2018):
+Of the 81 coastal municipalities in Northern Norway, 10 did not have aquaculture in any of the studied years (2005 - 2018):
 
 
 * Andoy
@@ -51,7 +51,7 @@ Of the 81 coastal municipalities in Northern Norway, 10 did not have aquaculture
 * Prosanger
 * Rost
 * Tana
-* Vado
+* Vadso
 * Vaeroy
 * Vardo
 
@@ -85,7 +85,7 @@ To calculate eFCR-based sustainability indicator, we compared eFCR between the n
 High lice prevalence at the aquaculture production site can cause a decrease in production rate and can also cause a higher lice infection pressure on wild salmonids [@bjorn2001salmon; @nilsen2017vurdering]. 
 In this study, we used a lice indicator developed by the Norwegian Food Authority (www.Mattilsynet.no), which compares the average abundance of lice reported weekly, with a threshold abundance of lice. In northern Norway, the threshold abundance of lice is set to be 0.5 lice per fish for all weeks, except  weeks 21 to 26, when the thresholds is lowered to 0.2 (FOR-2012-12-05-1140).
 
-Based on the lice monitoring by the Norwegian Food authority, we formulated indicator for our study in the following way. For the highest lice sustainability score over a year, each municipality should have lower than the threshold lice count throughout a  year. In other words, the target of lice sustainability index is to keep lice under control at any time during the production cycle. For each production site, we estimated the proportion of weeks in a year when lice abundance  is below a threshold and averaged this estimate for all locations within a single municipality. Thus, when all the aquaculture locations in a municipality in a given year were below lice threshold during all 53 weeks of a year, the municipality scored 1 for the lice indicator. Conversely, a small number of weeks when abundance of lice at production sites was below threshold resulted in a lower score.
+Based on the lice monitoring by the Norwegian Food authority, we formulated indicator for our study in the following way. For the highest lice sustainability score over a year, each municipality should have lower than the threshold lice count throughout a  year. In other words, the target of lice sustainability index is to keep lice under control at any time during the production cycle. For each production site, we estimated the proportion of weeks in a year when lice abundance  is below a threshold and averaged this estimate for all locations within a single municipality. Thus, when all the aquaculture locations in a municipality in a given year were below lice threshold during all weeks of a year, the municipality scored 1 for the lice indicator. Conversely, a small number of weeks when abundance of lice at production sites was below threshold resulted in a lower score.
 
 Based on the lice monitoring by the Norwegian Food authority, we formulated indicator for our study in the following way. For the highest lice sustainability score over a year, each municipality should have lower than the threshold lice count throughout a  year. In other words, the target of lice sustainability index is to keep lice under control at any time during the production cycle. For each production site, we estimated the proportion of weeks in a year when lice abundance  is below a threshold and averaged this estimate for all locations within a single municipality. Thus, when all the aquaculture locations in a municipality in a given year were below lice threshold during all 53 weeks of a year, the municipality scored 1 for the lice indicator. Conversely, a small number of weeks when abundance of lice at production sites was below threshold resulted in a lower score.
 
