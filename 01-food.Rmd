@@ -21,7 +21,7 @@ Aquaculture goal consists of two components: total production and sustainability
 
 
 ```{r echo = FALSE, akva-chart, fig.cap='Proportion of fisheries and aquacuture production in Finnmark', out.width='100%', fig.align='center'}
-knitr::include_graphics("/Users/marinaespinasse/github/ohi_norway_bookdown/pics/production_chart.jpg", dpi = 700)
+knitr::include_graphics("/Users/marinaespinasse/github/ohi_norway_bookdown/pics/aqua_production_chart2.jpg", dpi = 700)
 ```
 Below is the description of each component of the aquaculture sub-goal.
 
@@ -41,10 +41,11 @@ Where, $\triangle Biomass$ is the difference of standing biomass of fish in Dece
 $\triangle Biomass$ is the difference between standing biomass of fish in December of a given year minus standing biomass in December of the previous year. When it was not possible to subtract standing biomass of the previous year, for instance, when there was no fish in the cages at the end of the previous year, we calculated the difference between earliest and latest month of the give year, when there were fish in the cages.
 
 For some municipalities, the total annual aquaculture production was negative, due to underestimation of fish biomass. In these cases, the total production was set to a missing value (NA). These missing values were replaced with a nearest observed production (either of the previous or of the following year). 
-Of the 81 coastal municipalities in Northern Norway, 10 did not have aquaculture in any of the studied years (2005 - 2018):
+Of the 81 coastal municipalities in Northern Norway, 11 did not have aquaculture in any of the studied years (2005 - 2018):
 
 
 * Andoy
+* Balsfjord
 * Berlevag
 * Hemnes
 * Malselv
@@ -119,7 +120,19 @@ MOMB \ index  = 1 - (\frac{MTB_{farms \ scored \ 3 \ and \ 4}}{MTB_{municipality
  
 The resultant index can be interpreted as follows. For a highest score, all the production sites within a municipality should score 1 or 2 at MOM B investigations. Also, the lower the biomass and number of the sites that score 3 and 4 at MOM B, the higher the score.
 
+**Escaped fish** 
 
+Escaped fish is one of the major problems in Norwegian aquaculture: there are hundreds of thousands of fish escaping from aquaculture production in Norway each year [@glover2019domesticated]. Some of the escaped fish may eventually survive and continue their life cycle in the wild. The main danger associated with survived escapees is that they are able to genetically interact with wild Atlantic salmon, compromising the fitness and population stability of this species [@fiske2014overvaaking; @taranger2015risk].
+In Norway, an expert group from several research institutes conducts an annual assessment on the incidence of escaped fish in the rivers. Based, on the estimated incidence of the escaped fish, they 
+classify the assessed rivers into 3 categories: with an incidence of escapees below 4% (low incidence), between 4 and 10% (moderate incidence), and above 10% (high incidence) [@glover2019domesticated].
+
+For the estimation of the escapees sustainability index, we used the data on incidence of escaped salmon in the northern Norwegian rivers in 2018 [@aronsen2019romt], provided by the Institute of Marine Research, Norway, and the data on geographical location of aquaculture farms in northern Norway, provided by the Fisheries Directorate of Norway. For each aquaculture site within each municipality, we calculated the distance to all the rivers included in the escapee’s incidence assessment. Then, we selected only the rivers, to which a single aquaculture site has a distance at most 150 km, which is the maximal distance from the farm where escaped fish can be caught [@skilbrei2015using]. We re-scaled the categories 1 to 3 using the 0 to 1 range in the following way: low incidence category 1 corresponded to score 1, medium incidence category corresponded to score 0.5, and high incidence – to score 0. Next, for all the rivers located no further than 150 km from a production site, we calculated an average incidence score. Similarly, we averaged the incidence score for all the aquaculture production sites located within each municipality to yield a single score per municipality
+
+$$
+\begin{equation}
+Escapees \ index = \frac{\sum_{j=1}^{N}[\frac{\sum_{i=1}^{n}(incidence\ score_i)}{n}]}{N}
+\end{equation}
+$$
 
 
 ## Fisheries sub-goal
