@@ -24,7 +24,7 @@
 <meta name="author" content="Marina Espinasse" />
 
 
-<meta name="date" content="2020-08-18" />
+<meta name="date" content="2020-10-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -155,28 +155,44 @@ The table below explains the structure of aquaculture goal: the components of th
 <td>2005-2018</td>
 <td>The Fisheries Directorate of Norway</td>
 </tr>
+<tr class="odd">
+<td>Rivers category wrt incidence of escaped salmon</td>
+<td>The category of river based on low (&lt; 4%), medium (4-10%), or high incidence of escaped fish (&gt; 10%)</td>
+<td>2018</td>
+<td>Institute of Marine Research</td>
+</tr>
 </tbody>
 </table>
 <div id="estimating-sustainable-aquacultlure" class="section level3" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> Estimating sustainable aquacultlure</h3>
 <p>Aquaculture goal consists of two components: total production and sustainability indices. When both components are calculated, they are combined into the amount of aquaculture production (in tons og kg) produced sustainably.</p>
 <div class="figure" style="text-align: center"><span id="fig:akva-chart"></span>
-<img src="pics/aqua_production_chart2.jpg" alt="Proportion of fisheries and aquacuture production in Finnmark" width="100%" />
+<img src="pics/aqua_production_chart2.png" alt="Proportion of fisheries and aquacuture production in Finnmark" width="100%" />
 <p class="caption">
 Figure 1.1: Proportion of fisheries and aquacuture production in Finnmark
 </p>
 </div>
 <p>Below is the description of each component of the aquaculture sub-goal.</p>
 <p><strong>Annual production</strong></p>
-<p>We calculated total annual aquaculture production per municipality, as follows:
-<span class="math display" id="eq:totprod">\[\begin{equation}
-Tot.prod = \triangle Biomass + Harvest + Moved\ fish - Discard - Seeded\ smolts - Added\ fish
-\tag{1.1} 
+<p>We calculated total annual aquaculture production per municipality, as follows:</p>
+<p><span class="math display" id="eq:aquaprod">\[\begin{equation}
+\begin{split}
+Y_{C,i,k} = \\
+ &amp; \triangle Biomass  \\
+  &amp; + Harvest \\
+  &amp;  + Removed\ fish  \\
+  &amp;  - Seeded\ smolts  \\
+  &amp;  - Added\ fish  \\
+  &amp; - Discard
+\end{split}
+ \tag{1.1}
 \end{equation}\]</span></p>
 <p>Biomass change and harvest were corrected for slaughter weight, by multiplying their weight by 0.88.
 The weight of smolts was assumed to be 100 grams, and the weight of discarded salmon - <strong>5x0.88 = 4.4</strong> kg.</p>
-<p>Where, <span class="math inline">\(\triangle Biomass\)</span> is the difference of standing biomass of fish in December of the given year minus December of the previous year, <span class="math inline">\(Harvest\)</span> is biomass of fish harvested (kg); <span class="math inline">\(Seeded\ smolts\)</span> is the biomass of smolts (kg), seeded for production at the beginning of the production cycle; <span class="math inline">\(Discard\)</span> is the biomass of fish (kg) discarded at the slaughter plant, and Removed is the biomass of fish (kg) removed from the cages for slaughtering at another location or for other reasons</p>
-<p><span class="math inline">\(\triangle Biomass\)</span> is the difference between standing biomass of fish in December of a given year minus standing biomass in December of the previous year. When it was not possible to subtract standing biomass of the previous year, for instance, when there was no fish in the cages at the end of the previous year, we calculated the difference between earliest and latest month of the give year, when there were fish in the cages.</p>
+<p>Where, <span class="math inline">\(\triangle Biomass\)</span> is the difference of standing biomass of fish in December of the given year minus December of the previous year, <span class="math inline">\(Harvest\)</span> is biomass of fish harvested (kg); <span class="math inline">\(Seeded\ smolts\)</span> is the biomass of smolts (kg), seeded for production at the beginning of the production cycle; <span class="math inline">\(Discard\)</span> is the biomass of fish (kg) discarded at the slaughter plant, and <span class="math inline">\(Removed\)</span> is the biomass of fish (kg) removed from the cages for slaughtering at another location or for other reasons</p>
+<p><span class="math inline">\(\triangle Biomass\)</span> is the difference between standing biomass of fish in December of a given year minus standing biomass in December of the previous year. If it was not possible to subtract standing biomass of the previous year, for instance, when there was no fish in the cages at the end of the previous year, we calculated the difference between earliest and latest month of the give year, when there were fish in the cages.</p>
+<p><span class="math inline">\(removed\)</span> is the biomass of fish (kg) moved to another municipality due to excess of fish at a given location, disease outbreaks or other reasons.
+<span class="math inline">\(Added\)</span> is the biomass of fish brought to the given municipality from another municipality. We assumed that the weight of each added fish is 1.5 kg, as guided by northern Norwegian aquaculture producers (Cermaq Norway, Nova Sea AS, and Norway Royal Salmon).</p>
 <p>For some municipalities, the total annual aquaculture production was negative, due to underestimation of fish biomass. In these cases, the total production was set to a missing value (NA). These missing values were replaced with a nearest observed production (either of the previous or of the following year).
 Of the 81 coastal municipalities in Northern Norway, 11 did not have aquaculture in any of the studied years (2005 - 2018):</p>
 <ul>
@@ -185,57 +201,88 @@ Of the 81 coastal municipalities in Northern Norway, 11 did not have aquaculture
 <li>Berlevag</li>
 <li>Hemnes</li>
 <li>Malselv</li>
-<li>Prosanger</li>
+<li>Porsanger</li>
 <li>Rost</li>
 <li>Tana</li>
 <li>Vadso</li>
 <li>Vaeroy</li>
 <li>Vardo</li>
 </ul>
-<p>For code on estimation of aquaculture production, please</p>
-<p>For code on estimation of aquaculture production, please
+<p>For code on estimation of aquaculture production,
 <a href="https://ohi-norway.github.io/nor-prep/prep/food_provision/Mariculture/total_aquaculture_production_and_efcr_newdata_jan2020.html">see here</a>.</p>
-<p><strong>Economic feed conversion ratio (eFCR)</strong></p>
-<p>Economic feed conversion ratio (eFCR) is the ratio of the amount of feed used during the produciton of fish, to the final biomass of fish released to the market <span class="citation">(Boyd et al. <a href="#ref-boyd2007indicators" role="doc-biblioref">2007</a>)</span>.</p>
-<p>We calculated eFCR as a ratio of total feed used for production in a county (Norwegian “fylke”), to the total biomass of fish produced annually in the county. The total feed consumption and total biomass produced per region were calculated as a sum of feed consumption and produced biomass of all municipalities within the county.</p>
+<p><strong>Economic feed conversion ratio (eFCR) and protein retention ratio (PRR) score</strong></p>
 <p>Economic feed conversion ratio (eFCR) is the ratio of the amount of feed used during the production of fish, to the final biomass of fish released to the market <span class="citation">(Boyd et al. <a href="#ref-boyd2007indicators" role="doc-biblioref">2007</a>)</span>.</p>
+<p>As farmed fish are sometimes moved from one municipality to another before the end of the production cycle, due to overload of fish at a single location or due to diseases , the estimates of feed used and fish produced per municipality may be incorrect. Therefore, to adjust for possible transfer of fish between the municipalities we summed the amount of feed used and fish produced between the neighbor municipalities that share a coastline. We assumed that transfer of fish usually occurs over neighbor municipalities sharing coastline, although occasionally transfer of fish may happen over larger distances. The resultant groups of aggregated municipalities included from 2 to 7 neighbors. Details on the municipalities included in each group can be found in the table available at the project’s GitHub platform (<a href="https://github.com/OHINorway/norprep/tree/ghpages/prep/food_provision/Mariculture/data" class="uri">https://github.com/OHINorway/norprep/tree/ghpages/prep/food_provision/Mariculture/data</a>).
+To calculate the sum of fish produced per group of municipalities and year, we used the gap-filled production data and calculated an eFCR as follows:</p>
 <p><span class="math display" id="eq:efcr">\[\begin{equation}
-eFCR = \frac{Feed \ used,\ kg}{Biomass\ produced,\ kg}
- \tag{1.2}
+eFCR = \frac{Feed \ used,\ kg}{Fish\ produced,\ kg}
+\tag{1.2}
 \end{equation}\]</span></p>
-<p>We calculated eFCR as a ratio of total feed used for production in a county (Norwegian “fylke”), to the total biomass of fish produced annually in the county. The total feed consumption and total biomass produced per region were calculated as a sum of feed consumption and produced biomass of all municipalities within the county.</p>
-<p>To calculate eFCR-based sustainability indicator, we compared eFCR between the northern Norwegian counties for each year. The municipalities, located in the county with the lowest eFCR got the highest score, and the other counties, and municipalities located in them, eFCR score was calculated as 1 minus percentage of difference between the given county’s eFCR and the minimal observed eFCR that year.</p>
+<p>PRR indicates the amount of protein in the final fish product (whole body) to the amount of protein content in feed, applied during the production. It can be calculated as an inverse of the product of eFCR and ratio of protein content in feed to protein content in fish.</p>
+<p><span class="math display" id="eq:prr1">\[\begin{equation}
+PRR = \frac{1}{PER} = \frac{1}{eFCR\frac{\%\ protein\ in\ feed}{\%\ protein\ in\ animal(with\ gut)}}
+\tag{1.3}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:prr3">\[\begin{equation}
+PRR = \frac{0.475}{eFCR}
+\tag{1.4}
+\end{equation}\]</span></p>
+<p>We calculated the PRR for each municipality and year using eFCR values estimated on groups of aggregated municipalities, as explained above. Then, to rescale the PRR as an indicator 0 to 1, we used minimal possible eFCR equaling to 1.2. This value is a reported average value for FCR of salmon in Norway <span class="citation">(Aas, Ytrestøyl, and Åsgård <a href="#ref-aas2019resource" role="doc-biblioref">2019</a>; Tacon and Metian <a href="#ref-tacon2008global" role="doc-biblioref">2008</a>)</span>. We assumed that this is also the lowest realistic eFCR, that can be observed when no fish was lost, and no fish feed was wasted. Since the eFCR index included 357 values (out of total 1020) that were lower than 1.2, which we considered unrealistic, we replaced them with a value 1.2 before calculating PRR index. These unrealistically low eFCR values appear due to our imprecise calculation of feed applied and fish produced per municipality. We aggregated municipalities as groups of neighbors was done based only on common sense, as we have no knowledge on where fish is transferred from each particular production site. Therefore, we may have misidentified some of the groups of municipalities, between which transfer of fish occurs regularly.
+The resultant maximal value of PRR (0.396) did not correspond to an ideal retention of protein (1), but we preferred to opt for a realistic minimum than a hypothetical reference, since in none of the studied years (2005 – 2018) a PRR of 1 would have been possible.</p>
+<p>The PRR sustainability indicator was then calculated as:</p>
+<p><span class="math display" id="eq:prr4">\[\begin{equation}
+PRR\ score = 1 - (\frac{0.396 - PRR}{0.396})
+\tag{1.5}
+\end{equation}\]</span></p>
+<p>The PRR score implies that the larger the PRR index and the close it to 0.396, the higher the score.</p>
 <p><strong>Lice prevalence</strong></p>
 <p>High lice prevalence at the aquaculture production site can cause a decrease in production rate and can also cause a higher lice infection pressure on wild salmonids <span class="citation">(Bjørn, Finstad, and Kristoffersen <a href="#ref-bjorn2001salmon" role="doc-biblioref">2001</a>; Nilsen et al. <a href="#ref-nilsen2017vurdering" role="doc-biblioref">2017</a>)</span>.
-In this study, we used a lice indicator developed by the Norwegian Food Authority (www.Mattilsynet.no), which compares the average abundance of lice reported weekly, with a threshold abundance of lice. In northern Norway, the threshold abundance of lice is set to be 0.5 lice per fish for all weeks, except weeks 21 to 26, when the thresholds is lowered to 0.2 (FOR-2012-12-05-1140).</p>
+In this study, we used a lice indicator developed by the Norwegian Food Authority (<a href="www.Mattilsynet.no">Mattilsynet</a>), which compares the average abundance of lice reported weekly, with a threshold abundance of lice. In northern Norway, the threshold abundance of lice is set to be 0.5 lice per fish for all weeks, except weeks 21 to 26, when the thresholds is lowered to 0.2 (FOR-2012-12-05-1140).</p>
 <p>Based on the lice monitoring by the Norwegian Food authority, we formulated indicator for our study in the following way. For the highest lice sustainability score over a year, each municipality should have lower than the threshold lice count throughout a year. In other words, the target of lice sustainability index is to keep lice under control at any time during the production cycle. For each production site, we estimated the proportion of weeks in a year when lice abundance is below a threshold and averaged this estimate for all locations within a single municipality. Thus, when all the aquaculture locations in a municipality in a given year were below lice threshold during all weeks of a year, the municipality scored 1 for the lice indicator. Conversely, a small number of weeks when abundance of lice at production sites was below threshold resulted in a lower score.</p>
-<p>Based on the lice monitoring by the Norwegian Food authority, we formulated indicator for our study in the following way. For the highest lice sustainability score over a year, each municipality should have lower than the threshold lice count throughout a year. In other words, the target of lice sustainability index is to keep lice under control at any time during the production cycle. For each production site, we estimated the proportion of weeks in a year when lice abundance is below a threshold and averaged this estimate for all locations within a single municipality. Thus, when all the aquaculture locations in a municipality in a given year were below lice threshold during all 53 weeks of a year, the municipality scored 1 for the lice indicator. Conversely, a small number of weeks when abundance of lice at production sites was below threshold resulted in a lower score.</p>
 <p><span class="math display" id="eq:lice">\[\begin{equation}
 Lice \ index = \sum_{i = 1}^{N \ of \ sites}[\frac{n \ weeks\ below \ threshold}{total\ weeks}]
- \tag{1.3}
+\tag{1.6}
 \end{equation}\]</span></p>
 <p>Missing values in lice score data were replaced with an average of the score over the recent 5 years with data, when more than 7 years of data were available. If only 7 or fewer year with data were available, we used all given years to calculate the average score and replace missing values with this score.
 For details on computation of the lice score, please follow this <a href="https://ohi-norway.github.io/nor-prep/prep/food_provision/Mariculture/lice_count_at_localities.html">link</a>.</p>
-<p><strong>Environmentlal monitoring - MOM B scores</strong></p>
+<p><strong>Environmental monitoring - MOM B scores</strong></p>
 <p>In Norway, Modelling-Ongrowing fish farm Monitoring type B (MOM B) is the main management program for the monitoring of environmental impact from fish farms <span class="citation">(Ervik et al. <a href="#ref-ervik1997regulating" role="doc-biblioref">1997</a>)</span>.</p>
 <p>The MOM B investigation involves analysis of sediments, taken directly below the farms and from the area up to 15 m beyond the farm. Three groups of sediment parameters are analyzed in MOM B: the presence and diversity of macro-infauna of the benthic sediments, pH and redox potential of the sediments, and sensory sediment variables (color, smell, consistency, gas ebullition, sludge thickness) (Norsk Standard 2016). This investigation is done less frequently than MOM A, usually one a year or every 2nd year but more frequently if high environmental impact was observed at the farm during the last monitoring <span class="citation">(Norge <a href="#ref-norge2016miljoovervaaking" role="doc-biblioref">2016</a>)</span>.</p>
 <p>The producers are obliged to regularly run MOM B and report environmental status at their farms to the Fisheries Directorate of Norway. The outcome of the MOM B investigation is then scaled from 1 to 4, corresponding to very good, good, bad, and very bad environmental condition, respectively. When environmental impact at the farm is suspected to be bad (score 3 or 4), the Directorate can request an additional, and larger investigation of the environmental status (MOM C). When both investigations suggest a very bad environmental status at the farm, the Directorate may request to cease production until environmental conditions are improved (FOR-2008-06-17-822).</p>
 <p>In this study, we used the scores of MOM B investigations to formulate the environmental impact index of aquaculture sustainability. We assumed that the extent of environmental impact from the production on the surrounding environment increases with the size of the farm, which is reflected in the maximal allowed production biomass (MAB). To estimate the environmental impact index, we calculated the sum of biomass of all the locations that scored 3 and 4 at the MOM B investigations, per municipality and year. Then, we calculated the proportion of this biomass to total biomass of all the farms located in a municipality each year, and 1 minus this proportion returned an environmental impact sustainability index.</p>
 <p><span class="math display" id="eq:momb">\[\begin{equation}
-MOMB \ index  = 1 - (\frac{MTB_{farms \ scored \ 3 \ and \ 4}}{MTB_{municipality \ total}})
-\tag{1.4}
+MOM\ B \ index  = 1 - (\frac{MTB_{farms \ scored \ 3 \ and \ 4}}{MTB_{municipality \ total}})
+\tag{1.7}
 \end{equation}\]</span></p>
 <p>The resultant index can be interpreted as follows. For a highest score, all the production sites within a municipality should score 1 or 2 at MOM B investigations. Also, the lower the biomass and number of the sites that score 3 and 4 at MOM B, the higher the score.</p>
+<p>The missing observations of MOM B scores were gap-filled by taking an average of MOM B score of the last 5 years with data per municipality. If a municipality had only 7 or less years of data, MOM B scores of all available years were averaged to replace the missing values. The data on MOM B investigations was provided by the Fisheries Directorate of Norway.</p>
 <p><strong>Escaped fish</strong></p>
 <p>Escaped fish is one of the major problems in Norwegian aquaculture: there are hundreds of thousands of fish escaping from aquaculture production in Norway each year <span class="citation">(Glover et al. <a href="#ref-glover2019domesticated" role="doc-biblioref">2019</a>)</span>. Some of the escaped fish may eventually survive and continue their life cycle in the wild. The main danger associated with survived escapees is that they are able to genetically interact with wild Atlantic salmon, compromising the fitness and population stability of this species <span class="citation">(Fiske, Aronsen, and Hindar <a href="#ref-fiske2014overvaaking" role="doc-biblioref">2014</a>; Taranger et al. <a href="#ref-taranger2015risk" role="doc-biblioref">2015</a>)</span>.
 In Norway, an expert group from several research institutes conducts an annual assessment on the incidence of escaped fish in the rivers. Based, on the estimated incidence of the escaped fish, they
 classify the assessed rivers into 3 categories: with an incidence of escapees below 4% (low incidence), between 4 and 10% (moderate incidence), and above 10% (high incidence) <span class="citation">(Glover et al. <a href="#ref-glover2019domesticated" role="doc-biblioref">2019</a>)</span>.</p>
 <p>For the estimation of the escapees sustainability index, we used the data on incidence of escaped salmon in the northern Norwegian rivers in 2018 <span class="citation">(Aronsen et al. <a href="#ref-aronsen2019romt" role="doc-biblioref">2019</a>)</span>, provided by the Institute of Marine Research, Norway, and the data on geographical location of aquaculture farms in northern Norway, provided by the Fisheries Directorate of Norway. For each aquaculture site within each municipality, we calculated the distance to all the rivers included in the escapee’s incidence assessment. Then, we selected only the rivers, to which a single aquaculture site has a distance at most 150 km, which is the maximal distance from the farm where escaped fish can be caught <span class="citation">(Skilbrei, Heino, and Svåsand <a href="#ref-skilbrei2015using" role="doc-biblioref">2015</a>)</span>. We re-scaled the categories 1 to 3 using the 0 to 1 range in the following way: low incidence category 1 corresponded to score 1, medium incidence category corresponded to score 0.5, and high incidence – to score 0. Next, for all the rivers located no further than 150 km from a production site, we calculated an average incidence score. Similarly, we averaged the incidence score for all the aquaculture production sites located within each municipality to yield a single score per municipality</p>
-<p><span class="math display">\[
-\begin{equation}
+<p><span class="math display" id="eq:escapees">\[\begin{equation}
 Escapees \ index = \frac{\sum_{j=1}^{N}[\frac{\sum_{i=1}^{n}(incidence\ score_i)}{n}]}{N}
-\end{equation}
-\]</span></p>
+\tag{1.8}
+\end{equation}\]</span></p>
+<p><strong>Final aquaculture goal scores</strong>
+The sustainability score for aquaculture sub-goal was calculated as the product of each of the sustainability indicators</p>
+<p><span class="math display" id="eq:aquasust">\[\begin{equation}
+\begin{split}
+  S_{i,k}^{AQC} = Lice\ index\\
+  &amp; *MOM\ B\ index \\
+  &amp; * PRR\ index \\
+  &amp; *Escapees\ index
+\end{split}
+ \tag{1.9}
+\end{equation}\]</span></p>
+<p>Where i, and k are single municipality and year, respectively.</p>
+<p>For the calculation of aquaculture sub-goal, aquaculture yield per year and municipality was divided by the sea area (km2) of a respective municipality, to reduce the variability of yield between the municipalities. Next, we defined a reference aquaculture yield, following the OHI’s concept of sustainable maximization of food production. As a reference yield <span class="math inline">\((Y_{R,k})\)</span> we chose an observed maximal yield over all municipalities in a given year k and divided this yield by the sea area of a respective municipality.</p>
+<p>The final aquaculture sub-goal score was calculated as the ratio of current aquaculture yield to a reference yield multiplied by the aquaculture sustainability score. The aquaculture sub-goal score was further multiplied by 100, to obtain a value on a scale from 0 to 100.</p>
+<p><span class="math display" id="eq:aquagoal">\[\begin{equation}
+X_{i,k}^{AQC} = \frac{Y_{C,i,k}}{Y_{R,k}}*S_{i,k}^{AQC} * 100
+\tag{1.10}
+\end{equation}\]</span></p>
 </div>
 </div>
 <div id="fisheries-sub-goal" class="section level2" number="1.2">
@@ -255,7 +302,7 @@ For the calculation of the sustainability of fisheries, we used an MSY-based app
       0 &amp; \text{if $SSB \le Blim$}\\
     \\
       1 - \frac{MSYBtrigger - SSB}{MSYBtrigger - Blim} &amp; \text{ if $Blim &lt; SSB &lt; MSYBtrigger$}
-\tag{1.5}      
+\tag{1.11}      
     \end{cases}   
 \end{equation}\]</span></p>
 <p>The idea of the B-score is that a healthy stock, for which <em>SSB</em> is larger than <em>MSYBtrigger</em> scores highest. A stock for which <em>SSB</em> is below <em>Blim</em>, scores zero and is considered unhealthy, while the <em>SSB/ MSYBtrigger</em> ratios between zero and one, are scaled by the difference between <em>MSYBtrigger</em> and <em>Blim</em> as shown in the formula above. Importantly, unlike in the Ocean Health Index for the West Coast of USA <span class="citation">(Halpern et al. <a href="#ref-halpern2014assessing" role="doc-biblioref">2014</a>)</span>, we did not penalize study regions for underexploiting the stocks. Therefore, in our approach a highest score corresponded to ratio of <em>SSB/MSYBtrigger</em> of 1 or lager.
@@ -268,74 +315,78 @@ The calculation of <em>F-score</em> is similar, and the highest <em>F-score</em>
       0 &amp; \text{if $F \ge Flim $}\\
       \\
       1 - \frac{Fmsy - F}{Fmsy - Flim} &amp; \text{if $Fmsy &lt; F &lt; Flim $}
- \tag{1.6}       
+ \tag{1.12}       
     \end{cases}  
 \end{equation}\]</span></p>
 <p>The final stock sustainability scores were calculated as the mean of the <em>B-score</em> and <em>F-score</em>.</p>
-<p><span class="math display" id="eq:sscore">\[\begin{equation}
-Stock.score_{j,k} = \frac{F_{score\ j,k} +B_{score\ j,k}}{2}
- \tag{1.7} 
+<p><span class="math display" id="eq:stockscore">\[\begin{equation}
+SS_{j,k} = \frac{F&#39;_{j,k} +B&#39;_{j,k}}{2}
+\tag{1.13}
 \end{equation}\]</span></p>
-<p>Where <em>j</em> is stock and <em>k</em> is year.
-For some species (capelin, saithe) <em>Flim</em> and <em>Fmsy</em> values were not available. In these cases, the stock scores were based only on the <em>B-scores</em>. In addition, for saithe, no <em>MSYBtrigger</em> was available and instead, we used a <em>SSB management trigger</em> (220000) reported in ICES advice for saithe in 2019 <a href="http://ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/pok.27.1-2.pdf">ICES 2019 Advice</a>. Similarly, for capelin, <em>MSYBtrigger</em> was not available, and we replaced it with the lowest observed <em>SSB</em> since 1994 (94000).</p>
+<p>Where <em>j</em> is stock and <em>k</em> is year.</p>
+<p>For some species (capelin, saithe) <em>Flim</em> and <em>Fmsy</em> values were not available. In these cases, the stock scores were based only on the <em>B-scores</em>. In addition, for saithe, no <em>MSYBtrigger</em> was available and instead, we used a <em>SSB management trigger</em> (220000) reported in ICES advice for saithe in 2019 <a href="http://ices.dk/sites/pub/Publication%20Reports/Advice/2019/2019/pok.27.1-2.pdf">ICES 2019 Advice</a>. Similarly, for capelin, <em>MSYBtrigger</em> was not available, and we replaced it with the lowest observed <em>SSB</em> since 1994 (94000).</p>
 <p>In addition to stock sustainability scores, we calculated the annual catch of each species in each municipality and divided it by municipality’s sea area (in <span class="math inline">\(km^2\)</span>) to smooth the differences in total catch between the municipalities. There were also considerable interannual differences in total catches, and to smooth them we applied a 3-year rolling mean to catches of each stock using package zoo in R <span class="citation">(Zeileis and Grothendieck <a href="#ref-zeileis2005zoo" role="doc-biblioref">2005</a>)</span>. Then, we compared catch in each municipality per year with the maximal observed catch per area of the same stock in the whole study region. However, catches between municipalities differed by several powers of magnitude (from less than 10 tons to about 10000 tons), therefore we used a 75th percentile of the total catch distribution per species as a reference maximal catch, and the municipalities that caught more than 75th quantile of the maximal catch, were assigned proportion 1.
 The catch weighted score was calculated as the product of proportion of catch per area to maximal catch per area and stock score of each species.</p>
-<p><span class="math display" id="eq:catchweight">\[\begin{equation}
-Catch\ weighted \ score_{i,j, k} = \frac{Catch\ per\ area_{i,j,k}}{Catch\ per\ area_{max,j,k}}*Stock\ score_{j,k}
-\tag{1.8} 
+<p><span class="math display" id="eq:cws">\[\begin{equation}
+CWS_{i,j, k} = \frac{C_{C,i,j,k}}{C_{R,j,k}}*SS_{j,k}
+\tag{1.14}
 \end{equation}\]</span></p>
-<p>Where <em>i</em>, <em>j</em>, and <em>k</em> are single municipality, stock, and year, respectively.
-Finally, the fisheries goal score per municipality and year was calculated as the sum over all stocks of the product of catch weighted score and the proportion that each stock constituted of the total catch in a municipality.</p>
+<p>Where <em>i</em>, <em>j</em>, and <em>k</em> are single municipality, stock, and year, respectively.</p>
+<p>Finally, the fisheries goal score per municipality and year was calculated as the sum over all stocks of the product of catch weighted score and the proportion that each stock constituted of the total catch in a municipality.
+Catch proportion for a single stock, or a weight:</p>
+<p><span class="math display" id="eq:weightstock">\[\begin{equation}
+w_{i,j,k} = \frac{C_{i,j,k}}{\sum C_{i,k}}
+\tag{1.15}
+\end{equation}\]</span></p>
 <p><span class="math display" id="eq:fishscore">\[\begin{equation}
-\begin{aligned}
- Fisheries\ score_{i,k} = \\
- &amp; \sum_{j = 1}^{N stocks}Catch\ weighted\ score_{i,j,k}\\
- &amp; * Catch\ proportion_{i,j,k}* 100
- \end{aligned}
-  \tag{1.9} 
+X_{i,k}^{FIS} = \sum_{j = 1}^{N stocks}CWS_{i,j,k} *w_{i,j,k} *100
+  \tag{1.16} 
 \end{equation}\]</span></p>
 </div>
 <div id="combining-the-two-sub-goals" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Combining the two sub-goals</h2>
 <p>To define the final Food Production goal per municipality and year, we combined the aquaculture sub-goal and fisheries sub-goal weighted by their proportional contribution to total ocean-based food production.</p>
-<p><span class="math display" id="eq:foodprod">\[\begin{equation}
-W_{FP\ i, k} = \frac{P_{F\ i,k}}{(P_{F\ i,k} + P_{A\ i,k})}
-\tag{1.10} 
+<p><span class="math display" id="eq:foodprod1">\[\begin{equation}
+w_{i,k}^{FIS} = \frac{\sum C_{i,k}}{\sum C_{i,k} + Y_{C,i,k}}
+\tag{1.17} 
 \end{equation}\]</span></p>
-<p><span class="math display">\[~\]</span>
-<span class="math display">\[~\]</span></p>
-<p><span class="math display" id="eq:foodprod">\[\begin{equation}
-\begin{split}
-  Food\ provision\ total_{i,k}  = \\
-  &amp; (W_{FP\ i,k} * Fisheries\ score_{i,k})\\
-  &amp; + (1 - W_{FP\ i,k}) *Aquaculture\ score_{i,k}  
-\end{split}  
-  \tag{1.10}  
+<p>\</p>
+<p><span class="math display" id="eq:foodprod2">\[\begin{equation}
+X_{i,k}^{FP} = (w_{i,k}^{FIS} *X_{i,k}^{FIS}) + (1 - w_{i,k}^{FIS})*X_{i,k}^{AQC}
+\tag{1.18} 
 \end{equation}\]</span>
-<span class="math display">\[~\]</span></p>
-<p>Where <span class="math inline">\(W_{FP}\)</span> is the weight of annual fisheries production per municipality, <span class="math inline">\(P_{F\ i,k}\)</span> is the production yield (tons) of fisheries in a single municipality per year, and <span class="math inline">\(P_{A\ i,k}\)</span> is the production yield of aquaculture in a single municipality per year.
-In some years, a municipality could have only aquaculture production, but no catch was registered (e.g., Vevelstad in Nordland 2006-2010, <a href="food.html#fig:fishakva1">1.2</a>), or conversely, a municipality did not produce farmed fish, but had catches delivered (e.g., Anody in Nordland,<a href="#fishakva1"><strong>??</strong></a>). In these cases, the Food Production goal was estimated based only on aquaculture- or fisheries yield, respectively.</p>
+<!-- \begin{equation} -->
+<!-- \begin{split} -->
+<!--   Food\ provision\ total_{i,k}  = \\ -->
+<!--   & (W_{FP\ i,k} * Fisheries\ score_{i,k})\\ -->
+<!--   & + (1 - W_{FP\ i,k}) *Aquaculture\ score_{i,k}   -->
+<!-- \end{split}   -->
+<!--   (\#eq:foodprod)   -->
+<!-- \end{equation} --></p>
+<p>Where <span class="math inline">\(w^{FIS}_{FP}\)</span> is the weight of annual fisheries production per municipality.
+<span class="math inline">\(X_{i,k}^{FP}\)</span> is the production yield of fisheries in a single municipality and year; <span class="math inline">\(X_{i,k}^{AQC}\)</span> is the aquaculture yield in a single municipality and year.</p>
+<p>In some years, a municipality could have only aquaculture production, but no catch was registered (e.g., Hamarøy in Nordland 2006-2010, <a href="food.html#fig:fishakva1">1.2</a>), or conversely, a municipality did not produce farmed fish, but had catches delivered (e.g., Andøy in Nordland,<a href="food.html#fig:fishakva1">1.2</a>). In these cases, the Food Production goal was estimated based only on aquaculture- or fisheries yield, respectively.</p>
 </div>
 <div id="contribution-of-fisheries-and-aquaculture-to-the-total-seafood-production-yield-graphics" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Contribution of fisheries and aquaculture to the total seafood production yield: graphics</h2>
 <p>Below are the graphs of proportional contribution of aquaculture and fisheries total landings to ocean-based food production in northern Norway. The data is presented for each municipality of the three counties: Nordland, Troms, and Finnmark.</p>
 <span style="color:navy"><strong>Nordland</strong></span>
 <div class="figure" style="text-align: center"><span id="fig:fishakva1"></span>
-<img src="pics/compare_fish_aqua_nordland.jpg" alt="Proportion of fisheries and aquacuture production in Nordland" width="100%" />
+<img src="pics/compare_fish_aqua_nordland.png" alt="Proportion of fisheries and aquacuture production in Nordland" width="100%" />
 <p class="caption">
 Figure 1.2: Proportion of fisheries and aquacuture production in Nordland
 </p>
 </div>
 <span style="color:navy"><strong>Troms</strong></span>
 <div class="figure" style="text-align: center"><span id="fig:fishakva2"></span>
-<img src="pics/compare_fish_aqua_troms.jpg" alt="Proportion of fisheries and aquacuture production in Troms" width="100%" />
+<img src="pics/compare_fish_aqua_troms.png" alt="Proportion of fisheries and aquacuture production in Troms" width="100%" />
 <p class="caption">
 Figure 1.3: Proportion of fisheries and aquacuture production in Troms
 </p>
 </div>
 <span style="color:navy"><strong>Finnmark</strong></span>
 <div class="figure" style="text-align: center"><span id="fig:fishaakva3"></span>
-<img src="pics/compare_fish_aqua_finnmark.jpg" alt="Proportion of fisheries and aquacuture production in Finnmark" width="100%" />
+<img src="pics/compare_fish_aqua_finnmark.png" alt="Proportion of fisheries and aquacuture production in Finnmark" width="100%" />
 <p class="caption">
 Figure 1.4: Proportion of fisheries and aquacuture production in Finnmark
 </p>
@@ -345,6 +396,9 @@ Figure 1.4: Proportion of fisheries and aquacuture production in Finnmark
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-aas2019resource">
+<p>Aas, Turid Synnøve, Trine Ytrestøyl, and Torbjørn Einar Åsgård. 2019. “Resource Utilization of Norwegian Salmon Farming in 2016–Professional Final Report.” <em>Nofima Rapportserie</em>.</p>
+</div>
 <div id="ref-aronsen2019romt">
 <p>Aronsen, Tonje, Gunnar O Bakke, Bjørn Torgeir Barlaup, Johan Henrik Hårdensson Berntsen, Ola Håvard Diserud, Peder Fiske, Per Tommy Fjeldheim, et al. 2019. “Rømt Oppdrettslaks I Vassdrag I 2018: Rapport Fra Det Nasjonale Overvåkningsprogrammet.” <em>Fisken Og Havet</em>.</p>
 </div>
@@ -380,6 +434,9 @@ Figure 1.4: Proportion of fisheries and aquacuture production in Finnmark
 </div>
 <div id="ref-skilbrei2015using">
 <p>Skilbrei, Ove T, Mikko Heino, and Terje Svåsand. 2015. “Using Simulated Escape Events to Assess the Annual Numbers and Destinies of Escaped Farmed Atlantic Salmon of Different Life Stages from Farm Sites in Norway.” <em>ICES Journal of Marine Science</em> 72 (2): 670–85.</p>
+</div>
+<div id="ref-tacon2008global">
+<p>Tacon, Albert GJ, and Marc Metian. 2008. “Global Overview on the Use of Fish Meal and Fish Oil in Industrially Compounded Aquafeeds: Trends and Future Prospects.” <em>Aquaculture</em> 285 (1-4): 146–58.</p>
 </div>
 <div id="ref-taranger2015risk">
 <p>Taranger, Geir Lasse, Ørjan Karlsen, Raymond John Bannister, Kevin Alan Glover, Vivian Husa, Egil Karlsbakk, Bjørn Olav Kvamme, et al. 2015. “Risk Assessment of the Environmental Impact of Norwegian Atlantic Salmon Farming.” <em>ICES Journal of Marine Science</em> 72 (3): 997–1021.</p>
